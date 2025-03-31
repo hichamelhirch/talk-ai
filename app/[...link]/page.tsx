@@ -18,7 +18,7 @@ function reconstructUrl({ url }: { url: string[] }) {
 
 const Page = async ({ params }: PageProps) => {
   // Récupération des cookies
-  const sessionCookies = cookies().get("sessionId")?.value;
+  const sessionCookies = (await cookies()).get("sessionId")?.value;
 
   // Vérification si params.link existe
   if (!params?.link) {
